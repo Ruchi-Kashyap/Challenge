@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Use of JQuery to Add Edit Delete Table Row </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+<body>
+
+    <div class="container">
+        <h1>RESULT MANAGEMENT SYSTEM</h1>
+        <br />
+        <div id="studentdivcontainer">
+
+        </div>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+    var student = [
+            
+            {
+                "Register no": "001",
+                "Student Name": "ruchi",
+                "English": "39",
+                "Language": "89",
+                "Maths": "45",
+                "physics":"66",
+                "chemistry":"55"
+            },
+            {
+                "Register no": "002",
+                "Student Name": "Roshini",
+                "English": "66",
+                "Language": "90",
+                "Maths": "22",
+                "physics":"90",
+                "chemistry":"28"
+            }
+            ,
+            {
+                "Register no": "003",
+                "Student Name": "Sanjay",
+                "English": "45",
+                "Language": "66",
+                "Maths": "55",
+                "physics":"77",
+                "chemistry":"68"
+            },
+            {
+                "Register no": "004",
+                "Student Name": "Rahul",
+                "English": "28",
+                "Language": "90",
+                "Maths": "30",
+                "physics":"22",
+                "chemistry":"87"
+            }
+            ,
+            {
+                "Register no": "005",
+                "Student Name": "Kartik",
+                "English": "39",
+                "Language": "89",
+                "Maths": "45",
+                "physics":"66",
+                "chemistry":"55"
+            }
+    ]
+    convertJsontoHtmlTable();
+    function convertJsontoHtmlTable()
+    {
+
+    
+        var tablecolumns = [];
+        for (var i = 0; i < student.length; i++) {
+            for (var key in student[i]) {
+                if (tablecolumns.indexOf(key) === -1) {
+                    tablecolumns.push(key);
+                }
+            }
+        }
+
+        //Creating html table and adding class to it
+        var tablestudent = document.createElement("table");
+        tablestudent.classList.add("table");
+        tablestudent.classList.add("table-striped");
+        tablestudent.classList.add("table-bordered");
+        tablestudent.classList.add("table-hover")
+
+        //Creating header of the HTML table using
+        //tr
+        var tr = tablestudent.insertRow(-1);
+
+        for (var i = 0; i < tablecolumns.length; i++) {
+            //header
+            var th = document.createElement("th");
+            th.innerHTML = tablecolumns[i];
+            tr.appendChild(th);
+        }
+
+        // Add employee JSON data in table as tr or rows
+        for (var i = 0; i < student.length; i++) {
+            tr = tablestudent.insertRow(-1);
+            for (var j = 0; j < tablecolumns.length; j++) {
+                var tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = student[i][tablecolumns[j]];
+            }
+        }
+
+        //Final step , append html table to the container div
+        var studentdivcontainer = document.getElementById("studentdivcontainer");
+        studentdivcontainer.innerHTML = "";
+        studentdivcontainer.appendChild(tablestudent);
+    }
+</script>

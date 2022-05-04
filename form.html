@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+           list-style-type: none;
+           position: fixed;
+           top: 0;
+           width: 100%;
+        }
+        li {
+           float: left;
+           border-right: 1px solid white;
+        }
+        li a {
+           display: block;
+           padding: 8px;
+           background-color:whitesmoke;
+        }
+        li:last-child {
+           border-right: none;
+        }
+        div {
+           padding:30px;
+           margin-top:40px;
+           background-color:white;
+        }
+     </style>
+</head>
+<body>
+    <header>
+        
+    
+    </header>
+    <main>
+        <ul>
+            <li><a href = "#Adding new Record">Adding new Record</a></li>
+            <li><a href = "#Updating the Record">Updating the Record</a></li>
+            <li><a href = "#Deleting the Record">Deleting the Record</a></li>
+            
+         </ul>
+        
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+
+        
+    <form action="action_page.php" method="post">
+        Registeration no: <input type="text" name="Registerno"><br>
+        Student name: <input type="text" name="Sname"><br>
+        Marks in English: <input type="text" name="Eng"><br>
+        Marks in language: <input type="text" name="lng"><br>
+        Marks in Physics: <input type="text" name="Phy"><br>
+        Marks in Chemistry: <input type="text" name="chem"><br>
+        Marks in Maths: <input type="text" name="math"><br>
+        <input type="submit">
+        
+        </form>
+  
+    </main>
+</body>
+</html>
