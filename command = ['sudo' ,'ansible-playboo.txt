@@ -25,3 +25,4 @@ command = ['sudo', 'ansible-playbook', '-i', inv_path ,ins_path, '--tags', "upda
 
 
 
+
