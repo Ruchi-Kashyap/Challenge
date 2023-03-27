@@ -20,3 +20,6 @@ command = ['sudo', 'ansible-playbook', '-i', inv_path ,ins_path, '--tags', "upda
 
 
 command = ['sudo', 'ansible-playbook', '-i', inv_path ,ins_path, '--tags', "update_pem" ,'-key-file',pem_path,'-e','src_bin_path="."']
+ 
+
+ 
